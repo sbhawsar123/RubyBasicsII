@@ -1,6 +1,7 @@
 $LOAD_PATH << '.'
 require "Module_Demo"
-include Calc
+include Calculate
+
 times = gets.chomp.to_i
 str = []
 for i in 1..times
@@ -30,12 +31,12 @@ for i in 1..times
   end
   if str[i].include?("imported")
     if str[i].include?("book") || str[i].include?("chocolate") || str[i].include?("headache pills")
-      val = Calc.result(quant,price,5,0).round(2)
+      val = Calculate.result(quant, price, 5, 0).round(2)
       total += val
       salesTax += ( val - price )
       puts (" #{quant} #{res} : #{val}")
     else
-      val = Calc.result(quant,price,5,10).round(2))
+      val = Calculate.result(quant, price, 5, 10).round(2))
       total += val
       salesTax += ( val - price )
       puts(" #{quant} #{res} : #{val}")
@@ -47,7 +48,7 @@ for i in 1..times
        salesTax += ( val - price )
        puts (" #{quant} #{res} : #{val}")
      else
-       val = Calc.result(quant, price, 10, 0).round(2
+       val = Calculate.result(quant, price, 10, 0).round(2
        total += val
        salesTax += ( val - price )
        puts(" #{quant} #{res} : #{val}")
